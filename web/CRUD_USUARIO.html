@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Projeto CNH</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div><h3>CRUD CNH</h3></div>
+        <form name = "formUsuario" action= "web_controller_usuario" method = "post">
+            CPF: <input type ="text" name="txtcpf"><BR>
+            Data de Nascimento: <input type = "date" name ="txtdtnasc"><BR>
+            Endereco: <input type ="text" name="txtendereco"><BR>
+            Nome: <input type ="text" name="txtnome"><BR>
+            Filiacao: <input type ="text" name="txtfiliacao"><BR>
+            Telefone: <input type ="text" name="txttel"><BR><BR>
+            <input type="submit" name="btnoperacao" value="CADASTRAR">
+            <input type="submit" name="btnoperacao" value="DELETAR">
+            <input type="submit" name="btnoperacao" value="ATUALIZAR">
+            <input type="submit" name="btnoperacao" value="CONSULTAR POR ID">
+            <input type="submit" name="btnoperacao" value="CONSULTAR TODOS">
+        </form>
+    </body>
+</html>

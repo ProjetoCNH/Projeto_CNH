@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Projeto CNH</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div><h3>CRUD CNH</h3></div>
+        <form name = "formCNH" action= "web_controller_cnh" method = "post">
+            Número de Registro: <input type ="number" name="txtnumregistro"><BR>
+            Validade: <input type = "date" name ="txtvalidade"><BR>
+            Data de Emissão: <input type = "date" name ="txtdtemissao"><BR>
+            CPF: <input type ="text" name="txtcpf"><BR>
+            Categoria: <input type ="text" name="txtcategoria"><BR>
+            Nome da Autoescola: <input type ="text" name="txtnomeautoescola"><BR>
+            Orgão Emissor: <input type ="text" name="txtorgemissor"><BR>
+            Pontos na Carteira: <input type ="number" name="txtpontoscarteira"><BR><BR>
+            <input type="submit" name="btnoperacao" value="CADASTRAR">
+            <input type="submit" name="btnoperacao" value="DELETAR">
+            <input type="submit" name="btnoperacao" value="ATUALIZAR">
+            <input type="submit" name="btnoperacao" value="CONSULTAR POR ID">
+            <input type="submit" name="btnoperacao" value="CONSULTAR TODOS">
+        </form>
+    </body>
+</html>
