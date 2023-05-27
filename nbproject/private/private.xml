@@ -3,15 +3,11 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/alunos/Documents/NetBeansProjects/Projeto_CNH/web/CRUD_CNH.html</file>
-            <file>file:/C:/Users/alunos/Documents/NetBeansProjects/Projeto_CNH/src/java/controller/web_controller_cnh.java</file>
-            <file>file:/C:/Users/alunos/Documents/NetBeansProjects/Projeto_CNH/src/java/util/Conexao.java</file>
-            <file>file:/C:/Users/alunos/Documents/NetBeansProjects/Projeto_CNH/src/java/controller/web_controller_usuario.java</file>
-            <file>file:/C:/Users/alunos/Documents/NetBeansProjects/Projeto_CNH/src/java/model/CNHDAO.java</file>
-            <file>file:/C:/Users/alunos/Documents/NetBeansProjects/Projeto_CNH/web/index.html</file>
-            <file>file:/C:/Users/alunos/Documents/NetBeansProjects/Projeto_CNH/web/CRUD_USUARIO.html</file>
-            <file>file:/C:/Users/alunos/Documents/NetBeansProjects/Projeto_CNH/src/java/model/UsuarioDAO.java</file>
-            <file>file:/C:/Users/alunos/Documents/NetBeansProjects/Projeto_CNH/src/java/model/Usuario.java</file>
+            <file>file:/C:/Users/alunos/Downloads/Projeto_CNH3/Projeto_CNH/web/CRUD_MULTA.html</file>
+            <file>file:/C:/Users/alunos/Downloads/Projeto_CNH3/Projeto_CNH/web/CRUD_VEICULO.html</file>
+            <file>file:/C:/Users/alunos/Downloads/Projeto_CNH3/Projeto_CNH/src/java/controller/web_controller_veiculo.java</file>
+            <file>file:/C:/Users/alunos/Downloads/Projeto_CNH3/Projeto_CNH/web/CRUD_CNH.html</file>
+            <file>file:/C:/Users/alunos/Downloads/Projeto_CNH3/Projeto_CNH/src/java/controller/web_controller_cnh.java</file>
         </group>
     </open-files>
 </project-private>
