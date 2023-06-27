@@ -37,7 +37,7 @@ public class VeiculoDAO {
     
     public void update(Veiculo v) throws ClassNotFoundException, SQLException {
         Connection con = Conexao.getConexao();
-        PreparedStatement comando = con.prepareStatement("update veiculo set placa = ? , ano = ? , modelo = ? , tipo = ? , chassi = ? , cor = ? , crv = ? combustivel = ?, categoria = ?, cpf = ? where renavam = ?");
+        PreparedStatement comando = con.prepareStatement("update veiculo set placa = ? , ano = ? , modelo = ? , tipo = ? , chassi = ? , cor = ? , crv = ? , combustivel = ?, categoria = ?, cpf = ? where renavam = ?");
         comando.setString(1, v.getPlaca());
         comando.setString(2, v.getAno());
         comando.setString(3, v.getModelo());
@@ -48,6 +48,7 @@ public class VeiculoDAO {
         comando.setString(8, v.getCombustivel());
         comando.setString(9, v.getCategoria());
         comando.setString(10, v.getCpf());
+        comando.setInt(11, v.getRenavam());
         comando.execute();
         con.close();
     }

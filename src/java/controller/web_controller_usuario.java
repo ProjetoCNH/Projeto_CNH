@@ -92,7 +92,7 @@ public class web_controller_usuario extends HttpServlet {
 
                     request.setAttribute("usuario", u);
 
-                    request.getRequestDispatcher("resultadoatualizar1.jsp").forward(request, response);
+                    request.getRequestDispatcher("resultadoatualizarusuario.jsp").forward(request, response);
 
                 } catch (ClassNotFoundException ex) {
                     System.out.println("Erro ClassNotFound: " + ex.getMessage());
@@ -135,7 +135,7 @@ public class web_controller_usuario extends HttpServlet {
 
                     request.setAttribute("usuario", u);
 
-                    request.getRequestDispatcher("resultadoconsulta.jsp").forward(request, response);
+                    request.getRequestDispatcher("resultadoconsultausuario.jsp").forward(request, response);
 
                 } catch (ClassNotFoundException ex) {
                     System.out.println("Erro ClassNotFound: " + ex.getMessage());
@@ -149,7 +149,7 @@ public class web_controller_usuario extends HttpServlet {
 
                     request.setAttribute("lu", lu);
 
-                    request.getRequestDispatcher("resultadoconsultatodos.jsp").forward(request, response);
+                    request.getRequestDispatcher("resultadoconsultatodosusuario.jsp").forward(request, response);
 
                 } catch (ClassNotFoundException ex) {
                     System.out.println("Erro ClassNotFound: " + ex.getMessage());

@@ -15,8 +15,8 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import model.CNH;
-import model.CNHDAO;
+import model.Veiculo;
+import model.VeiculoDAO;
 
 /**
  *
@@ -44,20 +44,23 @@ public class web_controller_veiculo extends HttpServlet {
             String message = "Operação não realizada.";
 
             if (op.equals("CADASTRAR")) {
-                CNH c = new CNH();
-                c.setValidade(request.getParameter("txtrenavam"));
-                c.setDtEmissao(request.getParameter("txtdtemissao"));
-                c.setCpf(request.getParameter("txtcpf"));
-                c.setCategoria(request.getParameter("txtcategoria"));
-                c.setNomeAutoescola(request.getParameter("txtnomeautoescola"));
-                c.setOrgEmissor(request.getParameter("txtorgemissor"));
-                c.setPontosCarteira(Integer.parseInt(request.getParameter("txtpontoscarteira")));
-                CNHDAO cdao = new CNHDAO();
+                Veiculo v = new Veiculo();
+                v.setPlaca(request.getParameter("txtplaca"));
+                v.setAno(request.getParameter("txtano"));
+                v.setModelo(request.getParameter("txtmodelo"));
+                v.setTipo(request.getParameter("txttipo"));
+                v.setChassi(request.getParameter("txtchassi"));
+                v.setCor(request.getParameter("txtcor"));
+                v.setCrv(request.getParameter("txtcrv"));
+                v.setCombustivel(request.getParameter("txtcombustivel"));
+                v.setCategoria(request.getParameter("txtcategoria"));
+                v.setCpf(request.getParameter("txtcpf"));
+                VeiculoDAO vdao = new VeiculoDAO();
                 try {
-                    cdao.cadastrar(c);
+                    vdao.cadastrar(v);
                     message = "Cadastrado com sucesso!";
                     request.setAttribute("message", message);
-                    
+
                     request.getRequestDispatcher("resultadogeral.jsp").forward(request, response);
 
                 } catch (ClassNotFoundException ex) {
@@ -66,60 +69,60 @@ public class web_controller_veiculo extends HttpServlet {
                     System.out.println("Erro SQL: " + ex.getMessage());
                 }
             } else if (op.equals("DELETAR")) {
-                CNH c = new CNH();
-                c.setNumregistro(parseInt(request.getParameter("txtid")));
-                CNHDAO cdao = new CNHDAO();
+                Veiculo v = new Veiculo();
+                v.setRenavam(parseInt(request.getParameter("txtrenavam")));
+                VeiculoDAO vdao = new VeiculoDAO();
                 try {
-                    cdao.delete(c);
+                    vdao.delete(v);
                     message = "Deletado com Sucesso!";
-                    
+
                     request.setAttribute("message", message);
-                    
+
                     request.getRequestDispatcher("resultadogeral.jsp").forward(request, response);
 
+                } catch (ClassNotFoundException ex) {
+                    System.out.println("Erro ClassNotFound: " + ex.getMessage());
+                } catch (SQLException ex) {
+                    System.out.println("Erro SQL: " + ex.getMessage());
+                }
+            } else if (op.equals("ATUALIZAR")) {
+                Veiculo v = new Veiculo();
+                v.setRenavam(Integer.parseInt(request.getParameter("txtrenavam")));
+                VeiculoDAO vdao = new VeiculoDAO();
+
+                try {
+                    v = vdao.select(v);
+
+                    request.setAttribute("veiculo", v);
+
+                    request.getRequestDispatcher("resultadoatualizarveiculo.jsp").forward(request, response);
 
                 } catch (ClassNotFoundException ex) {
                     System.out.println("Erro ClassNotFound: " + ex.getMessage());
                 } catch (SQLException ex) {
                     System.out.println("Erro SQL: " + ex.getMessage());
                 }
-            }  else if (op.equals("ATUALIZAR")) {
-                CNH c = new CNH();
-                c.setNumregistro(parseInt(request.getParameter("txtid")));
-                CNHDAO cdao = new CNHDAO();
+            } else if (op.equals("ATUALIZAR DADOS")) {
 
+                Veiculo v = new Veiculo();
+                v.setRenavam(Integer.parseInt(request.getParameter("txtrenavam")));
+                v.setPlaca(request.getParameter("txtplaca"));
+                v.setAno(request.getParameter("txtano"));
+                v.setModelo(request.getParameter("txtmodelo"));
+                v.setTipo(request.getParameter("txttipo"));
+                v.setChassi(request.getParameter("txtchassi"));
+                v.setCor(request.getParameter("txtcor"));
+                v.setCrv(request.getParameter("txtcrv"));
+                v.setCombustivel(request.getParameter("txtcombustivel"));
+                v.setCategoria(request.getParameter("txtcategoria"));
+                v.setCpf(request.getParameter("txtcpf"));
+                VeiculoDAO vdao = new VeiculoDAO();
                 try {
-                    c = cdao.select(c);
-
-                    request.setAttribute("cnh", c);
-
-                    request.getRequestDispatcher("resultadoatualizar1.jsp").forward(request, response);
-
-                } catch (ClassNotFoundException ex) {
-                    System.out.println("Erro ClassNotFound: " + ex.getMessage());
-                } catch (SQLException ex) {
-                    System.out.println("Erro SQL: " + ex.getMessage());
-                }
-            }
-            else if (op.equals("ATUALIZAR DADOS")) {
-
-                CNH c = new CNH();
-
-                c.setValidade(request.getParameter("txtdescricao"));
-                c.setDtEmissao(request.getParameter("txtpreco"));
-                c.setNumregistro(parseInt(request.getParameter("txtid")));
-                c.setCpf(request.getParameter("txtcor"));
-                c.setCategoria(request.getParameter("txtquantidade"));
-                c.setNomeAutoescola(request.getParameter("txtnomeFornecedor"));
-                c.setOrgEmissor(request.getParameter("txtnParcelas"));
-                c.setPontosCarteira(Integer.parseInt(request.getParameter("txtmarca")));
-                CNHDAO cdao = new CNHDAO();
-                try {
-                    cdao.update(c);
+                    vdao.update(v);
                     message = "Atualizado com Sucesso!";
-                    
+
                     request.setAttribute("message", message);
-                    
+
                     request.getRequestDispatcher("resultadogeral.jsp").forward(request, response);
 
                 } catch (ClassNotFoundException ex) {
@@ -128,16 +131,16 @@ public class web_controller_veiculo extends HttpServlet {
                     System.out.println("Erro SQL: " + ex.getMessage());
                 }
             } else if (op.equals("CONSULTAR POR ID")) {
-                CNH c = new CNH();
-                c.setNumregistro(parseInt(request.getParameter("txtid")));
-                CNHDAO cdao = new CNHDAO();
+                Veiculo v = new Veiculo();
+                v.setRenavam(parseInt(request.getParameter("txtrenavam")));
+                VeiculoDAO vdao = new VeiculoDAO();
 
                 try {
-                    c = cdao.select(c);
+                    v = vdao.select(v);
 
-                    request.setAttribute("cnh", c);
+                    request.setAttribute("veiculo", v);
 
-                    request.getRequestDispatcher("resultadoconsulta.jsp").forward(request, response);
+                    request.getRequestDispatcher("resultadoconsultaveiculo.jsp").forward(request, response);
 
                 } catch (ClassNotFoundException ex) {
                     System.out.println("Erro ClassNotFound: " + ex.getMessage());
@@ -146,12 +149,12 @@ public class web_controller_veiculo extends HttpServlet {
                 }
             } else if (op.equals("CONSULTAR TODOS")) {
                 try {
-                    CNHDAO cdao = new CNHDAO();
-                    List<CNH> lcnh = cdao.selectall();
+                    VeiculoDAO vdao = new VeiculoDAO();
+                    List<Veiculo> lveiculo = vdao.selectall();
 
-                    request.setAttribute("lcnh", lcnh);
+                    request.setAttribute("lveiculo", lveiculo);
 
-                    request.getRequestDispatcher("resultadoconsultatodos.jsp").forward(request, response);
+                    request.getRequestDispatcher("resultadoconsultatodosveiculo.jsp").forward(request, response);
 
                 } catch (ClassNotFoundException ex) {
                     System.out.println("Erro ClassNotFound: " + ex.getMessage());

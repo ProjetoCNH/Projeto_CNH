@@ -10,6 +10,7 @@ package model;
  * @author alunos
  */
 public class Usuario {
+    
     private String cpf;
     private String nome;
     private String dtNascimento;
