@@ -34,12 +34,13 @@ public class UsuarioDAO {
     
     public void update(Usuario u) throws ClassNotFoundException, SQLException {
         Connection con = Conexao.getConexao();
-        PreparedStatement comando = con.prepareStatement("update usuario set nome = ? , dtnascimento = ? , filiacao = ? , telefone = ? , endereco = ?");
+        PreparedStatement comando = con.prepareStatement("update usuario set nome = ? , dtnascimento = ? , filiacao = ? , telefone = ? , endereco = ? where cpf = ?");
         comando.setString(1, u.getNome());
         comando.setString(2, u.getDtNascimento());
         comando.setString(3, u.getFiliacao());
         comando.setString(4, u.getTelefone());
         comando.setString(5, u.getEndereco());
+        comando.setString(6, u.getCpf());
         comando.execute();
         con.close();
     }

@@ -38,7 +38,7 @@ public class MultaDAO {
 
     public void update(Multa m) throws ClassNotFoundException, SQLException {
         Connection con = Conexao.getConexao();
-        PreparedStatement comando = con.prepareStatement("update multa set renavam = ? , numregistro = ? , datainfracao = ? , localmulta = ? , numidentificacaoagente = ? , pontoshablitacao = ? , valormulta = ? , classificacaomulta = ? , dtvencimento = ? , pontoshablitacao = ? , cpf = ? where codinfra = ?");
+        PreparedStatement comando = con.prepareStatement("update multa set renavam = ? , numregistro = ? , datainfracao = ? , localmulta = ? , numidentificacaoagente = ? , pontoshablitacao = ? , valormulta = ? , classificacaomulta = ? , dtvencimento = ? , cpf = ? where codinfra = ?");
         comando.setInt(1, m.getRenavam());
         comando.setInt(2, m.getNumRegistro());
         comando.setString(3, m.getDataInfracao());

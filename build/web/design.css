@@ -1,0 +1,157 @@
+* {box-sizing: border-box;}
+
+body{
+    margin:0;
+    font-family:"Arial";
+    background-image: url("carro2.jpg");
+    background-color: #cccccc;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+
+}
+
+table {
+  border-collapse: collapse;
+  width: 75%;
+  font-family:"Arial";
+  font-size: 17px;
+  border-radius:8px;
+  box-shadow: 0 17px 30px 0 rgba(0,0,0,0.30);
+}
+
+th, td {
+  text-align: center;
+  padding: 10px;
+  background-color: #FFFFFF;
+}
+
+
+th {
+  background-color: #49b4eb;
+  color: white;
+  font-family:"Arial Black";
+}
+
+.button {
+  background-color: #49b4eb; 
+  border: none;
+  color: white;
+  padding: 10px;
+  margin: 5px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 15px;
+  font-family:"Arial";
+  cursor: pointer;
+  -webkit-transition-duration: 0.4s; 
+  transition-duration: 0.4s;
+  border-radius: 8px;
+  width: 200px;
+}
+
+.button:hover {
+  background-color: #FFFFFF;
+  color: #49b4eb;
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+h3{
+    margin-left: 5px;
+}
+
+h4{
+    margin-left: 5px;
+}
+
+
+.cabec{
+    overflow: hidden;
+    Background-color:#000000;
+}
+
+.cabec a {
+    float: right;
+    font-size: 17px;
+    color:#FFFFFF;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.subcabec{
+    float:right;
+    overflow:hidden;
+}
+
+.subcabec .subcabecbtn{
+    font-size: 17px;  
+    border: none;
+    outline: none;
+    color: #FFFFFF;
+    padding: 14px 16px;
+    background-color: inherit;
+    font-family: inherit;
+    margin: 0;
+}
+
+.cabec a:hover{
+    transition:0.5s;
+    background-color:#FFFFFF; 
+    color: #000000;
+}
+
+.subcabec:hover .subcabecbtn{
+    background-color:#FFFFFF; 
+    color: #000000;
+}
+
+
+.subcabec-cont {
+    display: none;
+    position: absolute;
+    right: 0;
+    background-color:#FFFFFF;
+    color: #000000;
+    width: 100%;
+    z-index: 1;
+}
+
+.subcabec-cont a {
+    display: block;
+    float: right;
+    color: #000000;
+    text-decoration: none;
+}
+
+.subcabec-cont a:hover {
+    transition:0.5s;
+    background-color: #000000;
+    color: #FFFFFF;
+}
+
+.subcabec:hover .subcabec-cont {
+    display: block;
+}
+
+
+
+/* Caption text */
+.text {
+    background-color:rgba(0,0,0,0.3);
+    color: #ffffff;
+    font-size: 20px;
+    padding: 8px 12px;
+    position: absolute;
+    bottom: 8px;
+    width: 100%;
+    bottom:0;
+    text-align: center;
+}
+
+
+
+
+
+

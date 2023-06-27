@@ -10,6 +10,7 @@ package model;
  * @author alunos
  */
 public class Veiculo {
+    
     private int renavam;
     private String placa;
     private String ano;

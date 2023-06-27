@@ -9,21 +9,48 @@ and open the template in the editor.
         <title>Projeto CNH</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="design.css">
+
     </head>
     <body>
-        <div><h3>CRUD USUARIO</h3></div>
+        <div class="cabec">
+            <a href="index.html" style="float:left">Menu</a>
+            <div class="subcabec">
+                <button class="subcabecbtn">Funcionalidades</button>
+                <div class="subcabec-cont">
+                    <a href="CRUD_USUARIO.html">Usuario</a>
+                    <a href="CRUD_MULTA.html">Multa</a>
+                    <a href="CRUD_CNH.html">CNH</a>
+                    <a href="CRUD_VEICULO.html">Veiculo</a>
+                </div>
+            </div>
+        </div>
         <form name = "formUsuario" action= "web_controller_usuario" method = "post">
-            Data de Nascimento: <input type = "date" name ="txtdtnasc"><BR>
-            CPF: <input type ="text" name="txtcpf"><BR>
-            Endereco: <input type ="text" name="txtendereco"><BR>
-            Nome: <input type ="text" name="txtnome"><BR>
-            Filiacao: <input type ="text" name="txtfiliacao"><BR>
-            Telefone: <input type ="text" name="txttel"><BR><BR>
-            <input type="submit" name="btnoperacao" value="CADASTRAR">
-            <input type="submit" name="btnoperacao" value="DELETAR">
-            <input type="submit" name="btnoperacao" value="ATUALIZAR">
-            <input type="submit" name="btnoperacao" value="CONSULTAR POR ID">
-            <input type="submit" name="btnoperacao" value="CONSULTAR TODOS">
+            <br><br>
+            <center>
+                <table>
+                    <tr>
+                        <th>
+                            Usuario
+                        </th>
+                    </tr>
+                    <tr> 
+                        <td>
+                            CPF: <input type ="text" name="txtcpf"><BR>
+                            Data de Nascimento: <input type = "date" name ="txtdtnasc"><BR>
+                            Endereco: <input type ="text" name="txtendereco"><BR>
+                            Nome: <input type ="text" name="txtnome"><BR>
+                            Filiacao: <input type ="text" name="txtfiliacao"><BR>
+                            Telefone: <input type ="text" name="txttel"><BR><BR>
+                            <input type="submit" name="btnoperacao" class="button" value="CADASTRAR">
+                            <input type="submit" name="btnoperacao" class="button" value="DELETAR">
+                            <input type="submit" name="btnoperacao" class="button" value="ATUALIZAR">
+                            <input type="submit" name="btnoperacao" class="button" value="CONSULTAR POR ID">
+                            <input type="submit" name="btnoperacao" class="button" value="CONSULTAR TODOS">
+                        </td>
+                    </tr>
+                </table>
+            </center>
         </form>
     </body>
 </html>

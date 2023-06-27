@@ -97,7 +97,7 @@ public class web_controller_multa extends HttpServlet {
 
                     request.setAttribute("multa", m);
 
-                    request.getRequestDispatcher("resultadoatualizar1.jsp").forward(request, response);
+                    request.getRequestDispatcher("resultadoatualizarmulta.jsp").forward(request, response);
 
                 } catch (ClassNotFoundException ex) {
                     System.out.println("Erro ClassNotFound: " + ex.getMessage());
@@ -116,7 +116,7 @@ public class web_controller_multa extends HttpServlet {
                 m.setLocalMulta(request.getParameter("txtlocalmulta"));
                 m.setNumIdentificacaoAgente(Integer.parseInt(request.getParameter("txtnumidentificacaoagente")));
                 m.setPontosHabilitacao(Integer.parseInt(request.getParameter("txtpontoshabilitacao")));
-                m.setValorMulta(Integer.parseInt(request.getParameter("txtvalormulta")));
+                m.setValorMulta(Double.parseDouble(request.getParameter("txtvalormulta")));
                 m.setClassificacaoMulta(request.getParameter("txtclassificacaomulta"));
                 m.setDtVencimento(request.getParameter("txtvencimentomulta"));
                 m.setCpf(request.getParameter("txtcpf"));
@@ -145,7 +145,7 @@ public class web_controller_multa extends HttpServlet {
 
                     request.setAttribute("multa", m);
 
-                    request.getRequestDispatcher("resultadoconsulta.jsp").forward(request, response);
+                    request.getRequestDispatcher("resultadoconsultamulta.jsp").forward(request, response);
 
                 } catch (ClassNotFoundException ex) {
                     System.out.println("Erro ClassNotFound: " + ex.getMessage());
@@ -159,7 +159,7 @@ public class web_controller_multa extends HttpServlet {
 
                     request.setAttribute("lmu", lmu);
 
-                    request.getRequestDispatcher("resultadoconsultatodos.jsp").forward(request, response);
+                    request.getRequestDispatcher("resultadoconsultatodosmulta.jsp").forward(request, response);
 
                 } catch (ClassNotFoundException ex) {
                     System.out.println("Erro ClassNotFound: " + ex.getMessage());

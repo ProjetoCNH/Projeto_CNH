@@ -67,7 +67,7 @@ public class web_controller_cnh extends HttpServlet {
                 }
             } else if (op.equals("DELETAR")) {
                 CNH c = new CNH();
-                c.setNumregistro(parseInt(request.getParameter("txtid")));
+                c.setNumregistro(parseInt(request.getParameter("txtnumregistro")));
                 CNHDAO cdao = new CNHDAO();
                 try {
                     cdao.delete(c);
@@ -85,7 +85,7 @@ public class web_controller_cnh extends HttpServlet {
                 }
             }  else if (op.equals("ATUALIZAR")) {
                 CNH c = new CNH();
-                c.setNumregistro(parseInt(request.getParameter("txtid")));
+                c.setNumregistro(Integer.parseInt(request.getParameter("txtnumregistro")));
                 CNHDAO cdao = new CNHDAO();
 
                 try {
@@ -93,7 +93,7 @@ public class web_controller_cnh extends HttpServlet {
 
                     request.setAttribute("cnh", c);
 
-                    request.getRequestDispatcher("resultadoatualizar1.jsp").forward(request, response);
+                    request.getRequestDispatcher("resultadoatualizarcnh.jsp").forward(request, response);
 
                 } catch (ClassNotFoundException ex) {
                     System.out.println("Erro ClassNotFound: " + ex.getMessage());
@@ -105,14 +105,14 @@ public class web_controller_cnh extends HttpServlet {
 
                 CNH c = new CNH();
 
-                c.setValidade(request.getParameter("txtdescricao"));
-                c.setDtEmissao(request.getParameter("txtpreco"));
-                c.setNumregistro(parseInt(request.getParameter("txtid")));
-                c.setCpf(request.getParameter("txtcor"));
-                c.setCategoria(request.getParameter("txtquantidade"));
-                c.setNomeAutoescola(request.getParameter("txtnomeFornecedor"));
-                c.setOrgEmissor(request.getParameter("txtnParcelas"));
-                c.setPontosCarteira(Integer.parseInt(request.getParameter("txtmarca")));
+                c.setNumregistro(Integer.parseInt(request.getParameter("txtnumregistro")));
+                c.setValidade(request.getParameter("txtvalidade"));
+                c.setDtEmissao(request.getParameter("txtdtemissao"));
+                c.setCpf(request.getParameter("txtcpf"));
+                c.setCategoria(request.getParameter("txtcategoria"));
+                c.setNomeAutoescola(request.getParameter("txtnomeautoescola"));
+                c.setOrgEmissor(request.getParameter("txtorgemissor"));
+                c.setPontosCarteira(Integer.parseInt(request.getParameter("txtpontoscarteira")));
                 CNHDAO cdao = new CNHDAO();
                 try {
                     cdao.update(c);
@@ -129,7 +129,7 @@ public class web_controller_cnh extends HttpServlet {
                 }
             } else if (op.equals("CONSULTAR POR ID")) {
                 CNH c = new CNH();
-                c.setNumregistro(parseInt(request.getParameter("txtid")));
+                c.setNumregistro(Integer.parseInt(request.getParameter("txtnumregistro")));
                 CNHDAO cdao = new CNHDAO();
 
                 try {
@@ -137,7 +137,7 @@ public class web_controller_cnh extends HttpServlet {
 
                     request.setAttribute("cnh", c);
 
-                    request.getRequestDispatcher("resultadoconsulta.jsp").forward(request, response);
+                    request.getRequestDispatcher("resultadoconsultacnh.jsp").forward(request, response);
 
                 } catch (ClassNotFoundException ex) {
                     System.out.println("Erro ClassNotFound: " + ex.getMessage());
@@ -151,7 +151,7 @@ public class web_controller_cnh extends HttpServlet {
 
                     request.setAttribute("lcnh", lcnh);
 
-                    request.getRequestDispatcher("resultadoconsultatodos.jsp").forward(request, response);
+                    request.getRequestDispatcher("resultadoconsultatodoscnh.jsp").forward(request, response);
 
                 } catch (ClassNotFoundException ex) {
                     System.out.println("Erro ClassNotFound: " + ex.getMessage());

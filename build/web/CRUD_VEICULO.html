@@ -9,36 +9,53 @@ and open the template in the editor.
         <title>Projeto CNH</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="design.css">
+
     </head>
     <body>
-        <div><h3>CRUD VEICULO</h3></div>
+        <div class="cabec">
+            <a href="index.html" style="float:left">Menu</a>
+            <div class="subcabec">
+                <button class="subcabecbtn">Funcionalidades</button>
+                <div class="subcabec-cont">
+                    <a href="CRUD_USUARIO.html">Usuario</a>
+                    <a href="CRUD_MULTA.html">Multa</a>
+                    <a href="CRUD_CNH.html">CNH</a>
+                    <a href="CRUD_VEICULO.html">Veiculo</a>
+                </div>
+            </div>
+        </div>
         <form name = "formveiculo" action= "web_controller_veiculo" method = "post">
-            Renavam: <input type ="number" name="txtrenavam"><BR>
-            Placa: <input type = "date" name ="txtplaca"><BR>
-            Ano: <input type = "date" name ="txtano"><BR>
-            Modelo: <input type ="text" name="txtmodelo"><BR>
-            Tipo: <input type ="text" name="txttipo"><BR>
-            Chassi: <input type ="text" name="txtchassi"><BR>
-            Cor: <input type ="text" name="txtcor"><BR>
-            Crv: <input type ="number" name="txtcrv"><BR>
-            Combustivel: <input type ="number" name="txtcombustivel"><BR>
-            Categoria: <input type ="number" name="txtcategoria"><BR>
-            Cpf: <input type ="number" name="txtcpf"><BR><BR>
-            <input type="submit" name="btnoperacao" value="CADASTRAR">
-            <input type="submit" name="btnoperacao" value="DELETAR">
-            <input type="submit" name="btnoperacao" value="ATUALIZAR">
-            <input type="submit" name="btnoperacao" value="CONSULTAR POR ID">
-            <input type="submit" name="btnoperacao" value="CONSULTAR TODOS">
+            <br><br>
+            <center>
+                <table>
+                    <tr>
+                        <th>
+                            Veiculo
+                        </th>
+                    </tr>
+                    <tr> 
+                        <td>
+                            Renavam: <input type ="number" name="txtrenavam"><BR>
+                            Placa: <input type = "text" name ="txtplaca" maxlength="10"><BR>
+                            Ano: <input type = "text" name ="txtano" maxlength="4" ><BR>
+                            Modelo: <input type ="text" name="txtmodelo" maxlength="50"><BR>
+                            Tipo: <input type ="text" name="txttipo" maxlength="50"><BR>
+                            Chassi: <input type ="text" name="txtchassi" maxlength="17"><BR>
+                            Cor: <input type ="text" name="txtcor" maxlength="20"><BR>
+                            Crv: <input type ="text" name="txtcrv" maxlength="80"><BR>
+                            Combustivel: <input type ="text" name="txtcombustivel" maxlength="20"><BR>
+                            Categoria: <input type ="text" name="txtcategoria" maxlength="30"><BR>
+                            CPF: <input type ="text" name="txtcpf" maxlength="14"><BR><BR>
+                            <input type="submit" name="btnoperacao" class="button" value="CADASTRAR">
+                            <input type="submit" name="btnoperacao" class="button" value="DELETAR">
+                            <input type="submit" name="btnoperacao" class="button" value="ATUALIZAR">
+                            <input type="submit" name="btnoperacao" class="button" value="CONSULTAR POR ID">
+                            <input type="submit" name="btnoperacao" class="button" value="CONSULTAR TODOS">
+                        </td>
+                    </tr>
+                </table>
+            </center>
         </form>
-    </body>
-</html>
->
-    <head>
-        <title>TODO supply a title</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    </head>
-    <body>
-        <div>TODO write content</div>
     </body>
 </html>
