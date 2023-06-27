@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Projeto CNH</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div><h3>CRUD MULTA</h3></div>
+        <form name = "formMulta" action= "web_controller_multa" method = "post">
+            Código da Infração: <input type = "number" name ="txtcodinfra"><BR>
+            Renavam: <input type ="number" name="txtrenavam"><BR>
+            Número de registro: <input type ="number" name="txtnumregistro"><BR>
+            Data infração: <input type ="date" name="txtdtinfracao"><BR>
+            Local da Multa: <input type ="text" name="txtlocalmulta"><BR>
+            Número de identificação de agente: <input type ="number" name="txtnumidentificacaoagente"><BR>
+            Pontos habilitação: <input type ="number" name="txtpontoshabilitacao"><BR>
+            Valor da Multa: <input type ="number" name="txtvalormulta" step="0.01"><BR>
+            Classificação da Multa: <input type ="text" name="txtclassificacaomulta"><BR>
+            Vencimento da Multa: <input type ="date" name="txtvencimentomulta"><BR>
+            CPF: <input type ="text" name="txtcpf"><BR><BR>
+            <input type="submit" name="btnoperacao" value="CADASTRAR">
+            <input type="submit" name="btnoperacao" value="DELETAR">
+            <input type="submit" name="btnoperacao" value="ATUALIZAR">
+            <input type="submit" name="btnoperacao" value="CONSULTAR POR ID">
+            <input type="submit" name="btnoperacao" value="CONSULTAR TODOS">
+        </form>
+    </body>
+</html>
